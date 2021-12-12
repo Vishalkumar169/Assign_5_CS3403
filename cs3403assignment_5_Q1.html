@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Assign.5_Q1</title>
+    <style>
+
+        body{
+            display: grid;
+            place-items: center;
+            background-color: aqua;
+        }
+        .box {
+            background-color: transparent;
+            width: 45vw;
+            height: 30vh;
+            border: 1px solid red;
+            perspective: 1000px;
+        }
+
+        .inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+        }
+
+        .box:hover .inner {
+            transform: rotateY(180deg);
+        }
+
+        img{
+            width: 45vw;
+            height: 30vh;
+        }
+
+
+        .front,
+        .back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+        }
+
+        .front {
+            background-color: yellow;
+            color: black;
+        }
+
+        .back {
+            background-color: rgb(73, 156, 240);
+            color: white;
+            transform: rotateY(180deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="main">
+        <div class="box">
+            <div class="inner">
+                <div class="front">
+                    <img src="https://static3.depositphotos.com/1002188/167/i/600/depositphotos_1670284-stock-photo-smiley-face-on-ball.jpg" alt="smily">
+                </div>
+                <div class="back">
+                    <h2>Nice</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Assign.5_Q3</title>
+    <style>
+
+        body{
+            background-color: bisque;
+            display: grid;
+            place-items: center;
+            height: 100vh;
+        }
+
+        .main{
+            background-color: yellow;
+            border-radius: 12px;
+        }
+
+        .myForm{
+            display: flex;
+            flex-direction: column;
+            width: 60vw;
+            height: 40vh;
+            padding-left: 10px;
+            
+        }
+
+        label{
+            height: 3.1rem;
+            font-size: 3rem;
+            padding-left: 2rem;
+            padding: 10px 0;
+        }
+
+        input{
+            height: 2rem;
+            width: 50%;
+            border-radius: 12px;
+            margin-left: 10px;
+            font-size: 1.5rem;
+            color: (red);
+            padding-left: 15px;
+        }
+
+        button{
+            width: 150px;
+            height: 50px;
+            margin-left: 15px;
+            background-color: rgb(230, 191, 19);
+            color: white;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class='main'> 
+        <form class='myForm' onsubmit="return validateForm()" >
+        
+        <label for="Username">Username:<input type="text" id="Username"></label>
+        <label for="email">Email: <input type="text" id="email"></label>
+        <label for="password">Password: <input type="Password" id="pass"> </label>
+        <button>Check Form</button>
+
+        </form>
+    </div>
+    
+    <script>
+        function validateForm(){
+
+            var text= /^[0-9a-zA-Z]+$/;
+            if(!(document.getElementById('Username').value.match(text))){
+                alert("Please enter only AlphaNumeric Characters");
+                return false;
+            }
+
+            var eval = /^\w+([\.-]?\w+)@\w+([\.-]?\w+)(\.\w{2,3})+$/;
+            if(!document.getElementById("email").value.match(eval)){
+                alert("Please enter valid email");
+                return false;
+            }
+
+            const pass = document.getElementById('pass');
+            if(pass.value.length>8 ||pass.value.length<6 ){
+                alert("The length of password should be 6-8 only");
+                return false;
+            }
+        }
+
+         
+    </script>
+</body>
+</html>
